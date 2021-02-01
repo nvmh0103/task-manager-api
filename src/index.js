@@ -18,3 +18,18 @@ app.use(taskRouter);
 app.listen(port, () => {
     console.log('Success');
 })
+
+// const bcrypt=require('bcryptjs');
+
+// const myFunction= async() => {
+//     const password = 'Me1230!';
+//     const hashedPassword= await bcrypt.hash(password, 8);
+
+//     console.log(password);
+//     console.log(hashedPassword);
+
+//     const isMatch = await bcrypt.compare('me1230!',hashedPassword);
+//     console.log(isMatch);
+// }
+
+// myFunction()
