@@ -48,6 +48,31 @@ router.get('/users/:id', async (req, res) => {
     }   
 })
 
+router.post('/users/logout', authen, async (req, res, next) => {
+    try{
+        req.user.tokens= req.user.tokens.filter( (token) => {
+            return token.token !== req.token;
+        })
+
+        await req.user.save();
+
+        res.send();
+    } catch (e) {
+        res.status(500).send();
+    }
+})
+
+router.post('/users/logoutAll', authen ,async (req, res, next) => {
+    try{
+        req.user.tokens= [];
+        await req.user.save();
+
+        res.send('logged out!');
+    } catch (e){
+        res.status(500).send(e);
+    }
+})
+
 router.patch('/users/:id', async (req, res) => {
     const updates=Object.keys(req.body);
     const allowedUpdates=['name', 'emails', 'password', 'age'];

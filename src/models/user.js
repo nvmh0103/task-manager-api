@@ -63,6 +63,18 @@ userSchema.methods.generateAuthToken= async function() {
     return token;
 }
 
+// get public profile of user
+userSchema.methods.toJSON= function () {
+    const user= this;
+
+    const userObject = user.toObject();
+
+    delete userObject.password;
+    delete userObject.tokens;
+    
+    return userObject;
+}
+
 
 // login
 userSchema.statics.findByCredentials = async (email, password) => {

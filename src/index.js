@@ -19,17 +19,3 @@ app.use(taskRouter);
 app.listen(port, () => {
     console.log('Success');
 })
-
-// const jwt=require('jsonwebtoken');
-
-// // const bcrypt=require('bcryptjs');
-
-// const myFunction= async() => {
-//     const token=jwt.sign({ _id: 'abc123'}, 'thisisme', { expiresIn: '7 days'});
-//     console.log(token);
-
-//     const data=jwt.verify(token, 'thisisme');
-//     console.log(data);
-// }
-
-// myFunction()
