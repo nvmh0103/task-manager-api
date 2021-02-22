@@ -1,5 +1,4 @@
-node_modules/
-
-avatar/
-images/
-config/
+node_modules
+avatar
+images
+config
